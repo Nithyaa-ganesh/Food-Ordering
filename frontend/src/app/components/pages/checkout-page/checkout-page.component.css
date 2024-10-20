@@ -1,0 +1,78 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+  margin: 0 2rem 6rem 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content {
+  width: 35rem;
+  margin-right: 3rem;
+}
+
+.content, form {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Make the form relative for absolute positioning */
+}
+
+form {
+  width: 60%;
+}
+
+/* Input containers */
+.input-container {
+  width: 100%; /* Ensure the container takes full width */
+  margin-bottom: 1rem; /* Add space below each input container */
+}
+
+/* Input styles */
+input {
+  width: 70%; /* Make input fields full width */
+  height: 2rem; /* Set a consistent height */
+  padding: 0.5rem; /* Add some padding for better appearance */
+  border: 1px solid #cccccc; /* Add a light border */
+  border-radius: 0.5rem; /* Match the border radius with the button */
+}
+
+/* Label styles */
+label {
+  margin-bottom: 0.5rem; /* Space between label and input */
+  display: block; /* Make label a block to stack on top of input */
+}
+
+/* Map section */
+
+
+/* Buttons section */
+.buttons-container {
+  margin-top: 2rem;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  margin: 2rem;
+  width: 25rem; /* Reduce width of payment box */
+}
+
+/* Button styles */
+button {
+  color: white;
+  background-color: #e72929;
+  width: 30%;
+  height: 2.5rem;
+  opacity: 0.8;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 2px 2px grey;
+  padding: 4px;
+}
+
+button:hover {
+  opacity: 1;
+  cursor: pointer;
+}

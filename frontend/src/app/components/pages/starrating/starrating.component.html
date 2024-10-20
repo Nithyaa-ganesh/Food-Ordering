@@ -1,0 +1,7 @@
+<div class="stars">
+    <span *ngFor="let star of starsArray; let i = index"
+          (click)="rate(i + 1)"
+          [ngStyle]="{color: i < rating ? checkedColor : uncheckedColor}">
+      ★
+    </span>
+</div>

@@ -1,0 +1,42 @@
+.payment-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.payment-options {
+  margin-bottom: 20px;
+}
+
+.input-container {
+  width: 100%; /* Ensure the container takes full width */
+  margin-bottom: 1.5rem; /* Add space below each input container */
+}
+
+input[type="text"], select {
+  width: 100%; /* Make input fields full width */
+  height: 2.2rem; /* Increase height for better appearance */
+  padding: 0.5rem; /* Add some padding */
+  border: 1px solid #cccccc; /* Add a light border */
+  border-radius: 0.5rem; /* Match the border radius with the button */
+}
+
+
+h3 {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+

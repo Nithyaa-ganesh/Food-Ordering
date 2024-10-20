@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Food Ordering!</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isLoggedIn"> <!-- Show Login link only if not logged in -->
+          <a routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!isLoggedIn"> <!-- Show Sign Up link only if not logged in -->
+          <a (click)="openSignup()">Sign Up</a> <!-- Call openSignup method -->
+        </li>
+        <li class="menu-container" *ngIf="isLoggedIn"> <!-- Show user profile link if logged in -->
+          <a routerLink="/profile">{{ username }}</a> <!-- Display username -->
+          <div class="menu">
+            <a routerLink="/orders">Orders</a>
+            <a (click)="confirmLogout()">Logout</a> <!-- Logout action -->
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page">
+            Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 3rem;
+  }
+  
+  .details {
+    width: 10rem;
+    font-size: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font: size 23px;;
+  }
+
+  .input-container {
+    margin-bottom: 1rem; /* Adds space between email, password, and button */
+  }
+
+  input {
+    font-size: 12px; /* Change this value for the desired email input font size */
+    padding: 0.4rem; /* Optional: Add some padding for better appearance */
+  }
+  
+  label {
+    font-size: 1.2rem; /* Change this value to adjust the font size */
+    margin-bottom: 0.5rem; /* Add space below the label */
+  }
+
+  .error-list {
+    color: red;
+    font-size: 14px; /* Adjust as needed */
+    margin-top: 0.5rem;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  
+  button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 9px;
+  }
+  
+  button:hover {
+    background-color: darkred;
+  }
+  

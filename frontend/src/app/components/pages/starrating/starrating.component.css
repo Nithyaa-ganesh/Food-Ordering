@@ -1,0 +1,20 @@
+.stars {
+    display: inline-block;
+    font-size: 20px;  /* Adjusted font size */
+  }
+  
+  .stars span {
+    cursor: pointer;
+    color: gray;  /* Default color for unselected stars */
+  }
+  
+  .stars .filled {
+    color: gold;  /* Color for filled stars */
+  }
+  
+  /* If you are also using 'checked' for some reason */
+  .stars .checked {
+    color: gold;  /* Ensure this is included if needed */
+  }
+  
+  

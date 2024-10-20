@@ -1,0 +1,68 @@
+/* General container for the orders page */
+.orders-container {
+  max-width: 600px; /* Set a maximum width for the container */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #ffffff; /* White background for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading styles */
+h2 {
+  margin-bottom: 20px; /* Space below the heading */
+  font-size: 2rem; /* Larger font size */
+  color: #333333; /* Dark color for readability */
+  text-align: center; /* Center the heading */
+}
+
+/* List styles */
+ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+/* Individual order item styles */
+li {
+  margin-bottom: 15px; /* Space between items */
+  padding: 15px; /* Increased padding for better touch area */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f7f7f7; /* Light grey background */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Hover effects for order items */
+li:hover {
+  background-color: #e9f5ff; /* Light blue background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Text styles for order details */
+li p {
+  margin: 5px 0; /* Space between paragraphs */
+  color: #555; /* Slightly lighter color for text */
+}
+
+/* Total price style */
+.total-price {
+  font-weight: bold; /* Bold text for emphasis */
+  color: #e72929; /* Red color for total price */
+  text-align: right; /* Right align total price */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .orders-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Smaller font size for heading */
+  }
+
+  li {
+    padding: 10px; /* Adjust padding for list items */
+  }
+}

@@ -1,0 +1,32 @@
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+<div *ngIf="successMessage" class="alert alert-success">
+  {{ successMessage }}
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="createOrder()" class="checkout-form">
+  <div class="input-container">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="fc.name.invalid && (fc.name.dirty || fc.name.touched)" class="error-message">
+      <small *ngIf="fc.name.errors?.required">Name is required.</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <label for="address">Address:</label>
+    <input id="address" formControlName="address" />
+    <div *ngIf="fc.address.invalid && (fc.address.dirty || fc.address.touched)" class="error-message">
+      <small *ngIf="fc.address.errors?.required">Address is required.</small>
+    </div>
+  </div>
+
+  <app-orderitem-list [order]="order"></app-orderitem-list> <!-- Include OrderitemListComponent -->
+  
+  
+
+  <div class="buttons-container">
+    <button type="submit">Go to Payment</button>
+  </div>
+</form>

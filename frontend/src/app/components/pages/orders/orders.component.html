@@ -1,0 +1,20 @@
+<div *ngIf="order">
+  <h2>Order Details</h2>
+  
+  <div>
+    <h3>Order ID: {{ order.paymentId }}</h3>
+    <p>Name: {{ order.name }}</p>
+    <p>Address: {{ order.address }}</p>
+    <p>Total Price: {{ order.totalPrice | currency: 'INR': 'symbol': '1.2-2' }}</p>
+    <p>Status: {{ order.status || 'Pending' }}</p>
+     <!-- Simplified line -->
+  </div>
+  
+  <h3>Items Ordered:</h3>
+  <app-orderitem-list [order]="order"></app-orderitem-list> 
+  
+</div>
+
+<div *ngIf="!order" class="alert alert-danger">
+  No order found.
+</div>

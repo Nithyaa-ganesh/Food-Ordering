@@ -1,0 +1,75 @@
+<div class="payment-container">
+  <h2>Select Payment Method</h2>
+
+  <div class="payment-options">
+    <label>
+      <input type="radio" name="paymentMethod" value="creditCard" 
+        (change)="onPaymentMethodChange('creditCard')" checked />
+      Credit Card
+    </label>
+    <label>
+      <input type="radio" name="paymentMethod" value="upi" 
+        (change)="onPaymentMethodChange('upi')" />
+      UPI
+    </label>
+    <label>
+      <input type="radio" name="paymentMethod" value="cod" 
+        (change)="onPaymentMethodChange('cod')" />
+      Cash on Delivery (COD)
+    </label>
+  </div>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="completePayment()">
+    <div *ngIf="isCreditCardSelected">
+      <h3>Credit Card Details</h3>
+      <div>
+        <label>Card Number:</label>
+        <input formControlName="cardNumber" type="text" />
+        <div *ngIf="paymentForm.get('cardNumber')?.invalid && paymentForm.get('cardNumber')?.touched">
+          <small class="error">Card Number is required.</small>
+        </div>
+      </div>
+      <div>
+        <label>Expiry Date:</label>
+        <input formControlName="expiryDate" type="text" placeholder="MM/YY" />
+        <div *ngIf="paymentForm.get('expiryDate')?.invalid && paymentForm.get('expiryDate')?.touched">
+          <small class="error">Expiry Date is required.</small>
+        </div>
+      </div>
+      <div>
+        <label>CVV:</label>
+        <input formControlName="cvv" type="text" />
+        <div *ngIf="paymentForm.get('cvv')?.invalid && paymentForm.get('cvv')?.touched">
+          <small class="error">CVV is required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isUpiSelected">
+      <h3>UPI Payment</h3>
+      <div>
+        <label>Choose UPI Type:</label>
+        <select formControlName="upiType">
+          <option value="gpay">Google Pay</option>
+          <option value="paytm">Paytm</option>
+        </select>
+      </div>
+      <div>
+        <label>UPI ID:</label>
+        <input formControlName="upiId" type="text" />
+        <div *ngIf="paymentForm.get('upiId')?.invalid && paymentForm.get('upiId')?.touched">
+          <small class="error">UPI ID is required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isCreditCardSelected && !isUpiSelected">
+      <h3>Cash on Delivery</h3>
+      <p>You will pay cash upon delivery.</p>
+    </div>
+
+    <div>
+      <button type="submit">Confirm Payment</button>
+    </div>
+  </form>
+</div>

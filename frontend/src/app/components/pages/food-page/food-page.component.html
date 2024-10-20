@@ -1,0 +1,72 @@
+<app-not-found
+  [visible]="!food.id"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back To Homepage">
+</app-not-found>
+
+<div *ngIf="food.id" class="container">
+  <img [src]="food.imageUrl" [alt]="food.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">{{ food.name }}</span>
+      <span class="favorite" [ngClass]="{ 'not': !isFavorite }" (click)="toggleFavorite()">❤</span>
+    </div>
+
+    <div class="rating">
+      <app-starrating 
+        [rating]="food.stars"
+        [stars]="5"
+        [checkedColor]="'gold'" 
+        [uncheckedColor]="'black'"
+        [readonly]="false" 
+        (ratingChange)="onStarRatingChange($event)">
+      </app-starrating>
+    </div>
+
+    <div class="size">
+      <label for="sizeSelect">Select Size:</label>
+      <select id="sizeSelect" [(ngModel)]="selectedSize" (change)="onSizeChange($event)">
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let origin of food.origins">{{ origin }}</span>
+    </div>
+
+    <div class="tags">
+      <a *ngFor="let tag of food.tags" routerLink="/tag/{{ tag }}">{{ tag }}</a>
+    </div>
+
+    <div class="cook-time">
+      <span>Time to cook about <strong>{{ food.cookTime }}</strong> minutes</span>
+    </div>
+
+    <div class="calories">
+      <span>Calories: <strong>{{ caloriesBySize }}</strong> kcal</span>
+    </div>
+
+    <div class="price">
+      <span>{{ priceBySize | currency: 'INR': 'symbol': '1.2-2' }}</span>
+    </div>
+
+    <button (click)="addToCart()">Add To Cart</button>
+    
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <ul *ngIf="comments.length; else noComments">
+        <li *ngFor="let comment of comments">{{ comment }}</li>
+      </ul>
+      <ng-template #noComments>
+        <p>No comments yet. Be the first to comment!</p>
+      </ng-template>
+      <form (submit)="addComment(); $event.preventDefault()">
+        <textarea [(ngModel)]="newComment" placeholder="Write a comment" required></textarea>
+        <button type="submit">Add Comment</button>
+      </form>
+    </div>
+  </div>
+</div>
